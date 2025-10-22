@@ -1,3 +1,355 @@
-body {
-    background-color: rgb(122, 114, 114);
+/* === css index === */
+ 
+/* --- Variáveis e Base --- */
+:root {
+    --cr7-dourado: #FFD700;
+    --cr7-vermelho: #E84D3B;
+    --cr7-preto: #1a1a1a;
+    --cr7-cinza-escuro: #333333;
 }
+ 
+/* --- Base Global --- */
+body {
+    font-family: 'Roboto', sans-serif;
+    color: var(--cr7-cinza-escuro);
+    line-height: 1.6;
+    background-color: #f8f9fa;
+    scroll-behavior: smooth;
+    padding-top: 80px;
+}
+ 
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 700;
+    color: var(--cr7-cinza-escuro);
+}
+ 
+.section-padding {
+    padding: 90px 0;
+}
+ 
+/* --- Navbar --- */
+#main-nav {
+    background-color: transparent !important;
+    padding: 15px 0;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    z-index: 1000;
+}
+#main-nav.scrolled {
+    background-color: rgba(0, 0, 0, 0.98) !important;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+#main-nav .nav-link {
+    color: white;
+    font-weight: 400;
+    margin-right: 15px;
+    transition: color 0.3s ease;
+}
+#main-nav .nav-link:hover {
+    color: var(--cr7-vermelho) !important;
+}
+.navbar-brand {
+    color: var(--cr7-dourado) !important;
+}
+ 
+/* Navbar versão escura (para seleção) */
+.navbar.bg-dark-fixed,
+#main-nav.fixed-dark {
+    background-color: var(--cr7-preto) !important;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+}
+ 
+/* --- Hero Sections --- */
+.hero, .hero-portugal {
+    position: relative;
+    display: flex;
+    align-items: center;
+    color: white;
+    text-align: center;
+}
+.hero {
+    height: 100vh;
+    background: url('https://images.pexels.com/photos/10777579/pexels-photo-10777579.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2') no-repeat center center/cover;
+    background-attachment: fixed;
+}
+.hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+}
+.hero h1, .hero h2, .hero a.btn-cta-hero {
+    position: relative;
+    z-index: 2;
+}
+.hero h1 {
+    font-size: 5.5rem;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+.hero h2 {
+    font-size: 2rem;
+    letter-spacing: 8px;
+    color: var(--cr7-dourado);
+}
+.hero-portugal {
+    height: 60vh;
+    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
+        url('https://images.pexels.com/photos/10777551/pexels-photo-10777551.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2') no-repeat center center/cover;
+}
+.hero-portugal h1 {
+    font-size: 4.5rem;
+    color: var(--cr7-dourado);
+    text-shadow: 2px 2px 5px rgba(0,0,0,0.8);
+}
+ 
+/* --- Botões --- */
+.btn-cta-hero {
+    background-color: var(--cr7-vermelho);
+    color: white;
+    border-radius: 50px !important;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(232, 77, 59, 0.5);
+}
+.btn-cta-hero:hover,
+.btn-danger:hover {
+    background-color: #C23E30;
+    transform: translateY(-2px) scale(1.02);
+    box-shadow: 0 6px 15px rgba(232, 77, 59, 0.8);
+}
+ 
+/* --- Biografia --- */
+.bio-image {
+    height: 400px;
+    background: url('https://images.pexels.com/photos/10777478/pexels-photo-10777478.jpeg?auto=compress&cs=tinysrgb&w=800') no-repeat center center/cover;
+    border-radius: 8px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+ 
+/* --- Clubes (Cards) --- */
+.club-card {
+    background-color: var(--cr7-cinza-escuro);
+    color: white;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    border: none;
+}
+.club-card img {
+    width: 70px;
+    height: 70px;
+    object-fit: contain;
+    margin-bottom: 10px;
+    border-radius: 50%;
+    background-color: white;
+    padding: 5px;
+    border: 2px solid white;
+}
+.club-main {
+    border: 4px solid var(--cr7-dourado) !important;
+    box-shadow: 0 4px 15px rgba(255, 215, 0, 0.5);
+}
+ 
+/* --- Títulos (Cards) --- */
+.trophy-item {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-bottom: 5px solid var(--cr7-vermelho);
+}
+.trophy-item:hover {
+    transform: translateY(-5px) scale(1.03);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15) !important;
+}
+ 
+/* --- Estatísticas (Index) --- */
+.stat-number {
+    font-family: 'Oswald', sans-serif;
+    font-size: 5rem;
+    color: var(--cr7-dourado);
+    line-height: 1;
+}
+ 
+/* --- Recordes (Seleção) --- */
+.fact-card {
+    background: linear-gradient(135deg, var(--cr7-vermelho), #C23E30);
+    color: white;
+    border-radius: 12px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease;
+    text-align: center;
+    padding: 30px 15px;
+    border: 3px solid var(--cr7-dourado);
+}
+.fact-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.25);
+}
+.fact-number {
+    font-family: 'Oswald', sans-serif;
+    font-size: 3.5rem;
+    color: var(--cr7-dourado);
+}
+.fact-text {
+    font-weight: 300;
+    font-size: 1.1rem;
+}
+ 
+/* --- Galeria (Seleção) --- */
+.moment-card img {
+    height: 250px;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+.moment-card:hover img {
+    transform: scale(1.05);
+}
+.card-title-portugal {
+    color: var(--cr7-vermelho) !important;
+    font-family: 'Oswald', sans-serif;
+}
+ 
+/* --- Cores e fundos extras --- */
+.bg-dark-custom {
+    background-color: var(--cr7-preto);
+    color: white;
+}
+.bg-gray-light {
+    background-color: #eeeeee;
+}
+ 
+/* --- Footer --- */
+footer {
+    background-color: var(--cr7-cinza-escuro);
+    color: white;
+}
+
+
+/* CSS SELEÇÃO */
+
+/* --- Paleta de Cores (Mantida) --- */
+        :root {
+            --cr7-dourado: #FFD700;
+            --cr7-vermelho: #E84D3B;
+            --cr7-preto: #1a1a1a;
+            --cr7-cinza-escuro: #333333;
+        }
+
+        /* --- Base --- */
+        body {
+            font-family: 'Roboto', sans-serif;
+            color: var(--cr7-cinza-escuro);
+            line-height: 1.6;
+            background-color: #f8f9fa;
+            scroll-behavior: smooth;
+            padding-top: 80px;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-family: 'Oswald', sans-serif;
+            font-weight: 700;
+            color: var(--cr7-cinza-escuro);
+        }
+
+        /* --- Navbar (Fundo Escuro Padrão e Z-INDEX) --- */
+        #main-nav {
+            background-color: var(--cr7-preto) !important;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+            z-index: 1000;
+            /* Garante que está no topo */
+        }
+
+        #main-nav .nav-link {
+            color: white;
+        }
+
+        #main-nav .nav-link:hover {
+            color: var(--cr7-dourado) !important;
+        }
+
+        .navbar-brand {
+            color: var(--cr7-dourado) !important;
+        }
+
+        /* --- Hero Section Portugal --- */
+        .hero-portugal {
+            height: 60vh;
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+                url('https://images.pexels.com/photos/10777551/pexels-photo-10777551.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2') no-repeat center center/cover;
+            position: relative;
+            color: white;
+            display: flex;
+            align-items: center;
+        }
+
+        .hero-portugal h1 {
+            font-size: 4.5rem;
+            color: var(--cr7-dourado) !important;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8);
+        }
+
+        .hero-portugal p {
+            font-size: 1.5rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* --- Seção de Fatos (Cards) --- */
+        .fact-card {
+            background: linear-gradient(135deg, var(--cr7-vermelho), #C23E30);
+            color: white;
+            border-radius: 12px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+            transition: transform 0.3s ease;
+            text-align: center;
+            padding: 30px 15px;
+            border: 3px solid var(--cr7-dourado);
+        }
+
+        .fact-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.25);
+        }
+
+        .fact-card .fact-number {
+            font-family: 'Oswald', sans-serif;
+            font-size: 3.5rem;
+            color: var(--cr7-dourado);
+            line-height: 1;
+        }
+
+        .fact-card .fact-text {
+            font-weight: 300;
+            font-size: 1.1rem;
+        }
+
+        /* --- Seção Galeria de Momentos --- */
+        .moment-card img {
+            height: 250px;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .moment-card:hover img {
+            transform: scale(1.05);
+        }
+
+        .card-title-portugal {
+            color: var(--cr7-vermelho) !important;
+            font-family: 'Oswald', sans-serif;
+        }
+
+        /* --- Seções Padrão --- */
+        .section-padding {
+            padding: 90px 0;
+        }
+
+        .bg-gray-light {
+            background-color: #eeeeee;
+        }
+
+        /* --- Footer (Mantido) --- */
+        footer {
+            background-color: var(--cr7-cinza-escuro);
+            color: white;
+        }

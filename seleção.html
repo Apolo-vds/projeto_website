@@ -1,146 +1,36 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CR7 - Portugal: O Herói da Nação</title>
-    
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    
-    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@700&family=Roboto:wght@300;400;700&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-    
-    <style>
-        /* --- Paleta de Cores (Mantida) --- */
-        :root {
-            --cr7-dourado: #FFD700;
-            --cr7-vermelho: #E84D3B;
-            --cr7-preto: #1a1a1a;
-            --cr7-cinza-escuro: #333333;
-        }
 
-        /* --- Base --- */
-        body {
-            font-family: 'Roboto', sans-serif; 
-            color: var(--cr7-cinza-escuro); 
-            line-height: 1.6;
-            background-color: #f8f9fa; 
-            scroll-behavior: smooth;
-            padding-top: 80px; 
-        }
-
-        h1, h2, h3, h4, h5, h6 {
-            font-family: 'Oswald', sans-serif; 
-            font-weight: 700; 
-            color: var(--cr7-cinza-escuro); 
-        }
-        
-        /* --- Navbar (Fundo Escuro Padrão e Z-INDEX) --- */
-        #main-nav {
-            background-color: var(--cr7-preto) !important; 
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
-            z-index: 1000; /* Garante que está no topo */
-        }
-        #main-nav .nav-link {
-            color: white; 
-        }
-        #main-nav .nav-link:hover {
-            color: var(--cr7-dourado) !important;
-        }
-        .navbar-brand {
-            color: var(--cr7-dourado) !important;
-        }
-
-        /* --- Hero Section Portugal --- */
-        .hero-portugal {
-            height: 60vh; 
-            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), 
-                        url('https://images.pexels.com/photos/10777551/pexels-photo-10777551.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2') no-repeat center center/cover;
-            position: relative;
-            color: white;
-            display: flex;
-            align-items: center;
-        }
-
-        .hero-portugal h1 {
-            font-size: 4.5rem;
-            color: var(--cr7-dourado) !important;
-            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8);
-        }
-        .hero-portugal p {
-            font-size: 1.5rem;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        /* --- Seção de Fatos (Cards) --- */
-        .fact-card {
-            background: linear-gradient(135deg, var(--cr7-vermelho), #C23E30);
-            color: white;
-            border-radius: 12px;
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
-            transition: transform 0.3s ease;
-            text-align: center;
-            padding: 30px 15px;
-            border: 3px solid var(--cr7-dourado);
-        }
-        .fact-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.25);
-        }
-        .fact-card .fact-number {
-            font-family: 'Oswald', sans-serif;
-            font-size: 3.5rem;
-            color: var(--cr7-dourado);
-            line-height: 1;
-        }
-        .fact-card .fact-text {
-            font-weight: 300;
-            font-size: 1.1rem;
-        }
-
-        /* --- Seção Galeria de Momentos --- */
-        .moment-card img {
-            height: 250px;
-            object-fit: cover;
-            transition: transform 0.5s ease;
-        }
-        .moment-card:hover img {
-            transform: scale(1.05);
-        }
-        .card-title-portugal {
-            color: var(--cr7-vermelho) !important;
-            font-family: 'Oswald', sans-serif;
-        }
-
-        /* --- Seções Padrão --- */
-        .section-padding {
-            padding: 90px 0; 
-        }
-
-        .bg-gray-light {
-            background-color: #eeeeee;
-        }
-
-        /* --- Footer (Mantido) --- */
-        footer {
-            background-color: var(--cr7-cinza-escuro);
-            color: white;
-        }
-    </style>
+    <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
 
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="main-nav">
         <div class="container">
-            <a class="navbar-brand fs-2 fw-bold" href="index.html" style="color: var(--cr7-dourado);">CR7 <small class="text-white">The Legend</small></a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <a class="navbar-brand fs-2 fw-bold" href="index.html" style="color: var(--cr7-dourado);">CR7 <small
+                    class="text-white">A Lenda Portuguesa</small></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item"><a class="nav-link" href="index.html">Página Principal</a></li>
-                    <li class="nav-item"><a class="nav-link active fw-bold" aria-current="page" href="#">Seleção Nacional <i class="bi bi-flag-fill ms-1"></i></a></li>
+                    <li class="nav-item"><a class="nav-link active fw-bold" aria-current="page" href="#">Seleção
+                            Nacional <i class="bi bi-flag-fill ms-1"></i></a></li>
                     <li class="nav-item"><a class="nav-link" href="#recordes">Recordes</a></li>
                     <li class="nav-item"><a class="nav-link" href="#galeria">Momentos</a></li>
                 </ul>
@@ -150,8 +40,9 @@
 
     <header id="inicio" class="hero-portugal text-center">
         <div class="container">
-            <h1>O CAPITÃO ETERNO</h1>
-            <p class="mt-4 fw-light">Mais de duas décadas de paixão, dedicação e recordes inigualáveis. O maior artilheiro de seleções de todos os tempos.</p>
+            <h1>O Capitão</h1>
+            <p class="mt-4 fw-light">Mais de duas décadas de paixão, dedicação e recordes inigualáveis. O maior
+                artilheiro de seleções de todos os tempos.</p>
         </div>
     </header>
 
@@ -159,7 +50,7 @@
         <div class="container text-center">
             <h2 class="section-title">Recordes e Conquistas por Portugal</h2>
             <div class="row g-4 justify-content-center">
-                
+
                 <div class="col-lg-3 col-md-6 col-sm-6">
                     <div class="fact-card">
                         <div class="fact-number">200+</div>
@@ -183,7 +74,7 @@
                         <small class="fw-bold">Campeão da Eurocopa</small>
                     </div>
                 </div>
-                
+
                 <div class="col-lg-3 col-md-6 col-sm-6">
                     <div class="fact-card">
                         <div class="fact-number">5</div>
@@ -191,24 +82,30 @@
                         <small class="fw-bold">Jogador a marcar em 5 edições</small>
                     </div>
                 </div>
-                
+
             </div>
         </div>
     </section>
 
     <section id="carreira-selecao" class="section-padding bg-gray-light">
         <div class="container">
-             <h2 class="section-title text-center">Trajetória Internacional</h2>
-             <div class="row align-items-center">
-                 <div class="col-lg-6">
-                    <p class="lead">Cristiano Ronaldo estreou pela Seleção Portuguesa em **2003**, aos 18 anos. Sua ascensão como capitão e líder coincidiu com a "Geração de Ouro" de Portugal, transformando o time em uma potência mundial.</p>
-                    <p>A Eurocopa de 2016 e a Liga das Nações de 2019 são os maiores triunfos do país e atestam sua importância como líder dentro e fora de campo. Sua longevidade no futebol de elite permitiu que ele quebrasse o recorde de mais gols e mais jogos por uma seleção nacional.</p>
-                    <a href="#galeria" class="btn btn-danger btn-lg mt-3 fw-bold">Ver Momentos Épicos <i class="bi bi-camera-fill ms-2"></i></a>
-                 </div>
-                 <div class="col-lg-6 mt-4 mt-lg-0 text-center">
-                     <img src="https://images.pexels.com/photos/10777558/pexels-photo-10777558.jpeg?auto=compress&cs=tinysrgb&w=800" class="img-fluid rounded shadow-lg" alt="Cristiano Ronaldo com a taça da Eurocopa 2016">
-                 </div>
-             </div>
+            <h2 class="section-title text-center">Trajetória Internacional</h2>
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <p class="lead">Cristiano Ronaldo estreou pela Seleção Portuguesa em **2003**, aos 18 anos. Sua
+                        ascensão como capitão e líder coincidiu com a "Geração de Ouro" de Portugal, transformando o
+                        time em uma potência mundial.</p>
+                    <p>A Eurocopa de 2016 e a Liga das Nações de 2019 são os maiores triunfos do país e atestam sua
+                        importância como líder dentro e fora de campo. Sua longevidade no futebol de elite permitiu que
+                        ele quebrasse o recorde de mais gols e mais jogos por uma seleção nacional.</p>
+                    <a href="#galeria" class="btn btn-danger btn-lg mt-3 fw-bold">Ver Momentos Épicos <i
+                            class="bi bi-camera-fill ms-2"></i></a>
+                </div>
+                <div class="col-lg-6 mt-4 mt-lg-0 text-center">
+                    <img src="images/cr7-euro.jpg" class="img-fluid rounded shadow-lg"
+                        alt="Cristiano Ronaldo com a taça da Eurocopa 2016">
+                </div>
+            </div>
         </div>
     </section>
 
@@ -216,10 +113,10 @@
         <div class="container text-center">
             <h2 class="section-title">Galeria de Glórias</h2>
             <div class="row g-4">
-                
+
                 <div class="col-lg-4 col-md-6">
                     <div class="card h-100 moment-card shadow border-0">
-                        <img src="https://images.pexels.com/photos/10777561/pexels-photo-10777561.jpeg?auto=compress&cs=tinysrgb&w=800" class="card-img-top" alt="CR7 Copa do Mundo">
+                        <img src="images/cr7-2006.webp" class="card-img-top" alt="CR7 Copa do Mundo">
                         <div class="card-body">
                             <h5 class="card-title card-title-portugal">Debut na Copa (2006)</h5>
                             <p class="card-text small text-muted">A primeira de muitas aparições no palco mundial.</p>
@@ -229,7 +126,8 @@
 
                 <div class="col-lg-4 col-md-6">
                     <div class="card h-100 moment-card shadow border-0">
-                        <img src="https://images.pexels.com/photos/10777570/pexels-photo-10777570.jpeg?auto=compress&cs=tinysrgb&w=800" class="card-img-top" alt="Comemoração de gol por Portugal">
+                        <img src="images/cristiano_euro_0.jpg" class="card-img-top"
+                            alt="Comemoração de gol por Portugal">
                         <div class="card-body">
                             <h5 class="card-title card-title-portugal">A consagração na Euro (2016)</h5>
                             <p class="card-text small text-muted">Apesar da lesão na final, o troféu é dele.</p>
@@ -237,12 +135,22 @@
                     </div>
                 </div>
 
-                <div class="col-lg-4 col-md-12">
+                <div class="col-lg-4 col-md-6">
                     <div class="card h-100 moment-card shadow border-0">
-                        <img src="https://images.pexels.com/photos/10777574/pexels-photo-10777574.jpeg?auto=compress&cs=tinysrgb&w=800" class="card-img-top" alt="CR7 Liga das Nações">
+                        <img src="images/nations-2019.jpg" class="card-img-top" alt="Comemoração de gol por Portugal">
                         <div class="card-body">
                             <h5 class="card-title card-title-portugal">Liga das Nações (2019)</h5>
                             <p class="card-text small text-muted">Mais um título para a galeria da Seleção.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-12">
+                    <div class="card h-100 moment-card shadow border-0">
+                        <img src="images/nations-2024.webp" class="card-img-top" alt="CR7 Liga das Nações">
+                        <div class="card-body">
+                            <h5 class="card-title card-title-portugal">Liga das Nações (2024)</h5>
+                            <p class="card-text small text-muted">Mais uma Liga das Nações para a coleção.</p>
                         </div>
                     </div>
                 </div>
@@ -252,12 +160,24 @@
 
     <footer class="text-center p-4">
         <div class="container">
-            <p class="mb-1">&copy; 2024 CR7 The Legend. Página dedicada à Seleção Nacional.</p>
-            <p class="small text-muted">Design & Desenvolvimento: [Seu Nome Completo]</p>
+            <p class="mb-1">&copy; 2025 CR7 The Legend — Página dedicada à Seleção Nacional.</p>
+            <div class="footer-info mt-3">
+                <p>Site desenvolvido em <strong>2025</strong> para <strong>Atividade Final de DSA1</strong><br>
+                    <strong>Turma:</strong> INF1FT
+                </p>
+                <p class="mb-0"><strong>Integrantes:</strong><br>
+                    ° Guilherme Luz, 12<br>
+                    ° Rhamon Ramos, 34<br>
+                    ° Wendel Oliveira, 36
+                </p>
+            </div>
         </div>
     </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
 
 </body>
+
 </html>
