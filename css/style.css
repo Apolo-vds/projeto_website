@@ -275,7 +275,7 @@ footer {
         .hero-portugal {
             height: 60vh;
             background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
-                url('https://images.pexels.com/photos/10777551/pexels-photo-10777551.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2') no-repeat center center/cover;
+                url('https://the18.com/sites/default/files/feature-images/20190315-The18-Image-Cristiano-Ronaldo-Portugal-Stats.jpg') no-repeat center center/cover;
             position: relative;
             color: white;
             display: flex;
@@ -352,4 +352,5 @@ footer {
         footer {
             background-color: var(--cr7-cinza-escuro);
             color: white;
+            font-size: 1.5rem;
         }
