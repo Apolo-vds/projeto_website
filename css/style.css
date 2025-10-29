@@ -68,9 +68,14 @@ h1, h2, h3, h4, h5, h6 {
     text-align: center;
 }
 .hero {
-    height: 100vh;
-    background: url('https://images.pexels.com/photos/10777579/pexels-photo-10777579.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2') no-repeat center center/cover;
-    background-attachment: fixed;
+    background: 
+        linear-gradient(rgba(25,25,25,0.6), rgba(25,25,25,0.6)), /* camada escura para contraste */
+        url('img/cr7-hero.jpg') center center/cover no-repeat;
+    min-height: 70vh;
+    display: flex;
+    align-items: center;
+    color: #fff;
+    position: relative;
 }
 .hero::before {
     content: '';
