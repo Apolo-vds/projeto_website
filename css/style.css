@@ -69,7 +69,7 @@ h6 {
 
 /* --- HERO ANIMADO --- */
 .hero-portugal {
-    height: 100vh;
+    height: 85vh;
     position: relative;
     background: url('https://ds-images.bolavip.com/news/image?src=https://images.bolavip.com/webp/en/1200_740/BUS_20250608_BUS_414512_ronaldo-nations-league-trophy-1200x740.webp&width=1200&height=740') center center/cover no-repeat;
     display: flex;
