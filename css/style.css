@@ -111,15 +111,18 @@ h6 {
 }
 
 .hero-content {
-    position: relative;
-    z-index: 2;
+    position: absolute;
+    bottom: 10px;
+    /* controla o quanto o título desce — aumente/diminua à vontade */
     text-align: center;
+    width: 100%;
+    z-index: 2;
     animation: fadeInHero 1.2s ease forwards;
-    padding-top: 120px;
 }
 
+
 .hero-content h1 {
-    font-size: 4.5rem;
+    font-size: 3.5rem;
     color: var(--cr7-dourado);
     text-shadow: 0 0 15px rgba(255, 215, 0, 0.6);
     opacity: 0;
@@ -166,28 +169,146 @@ h6 {
 }
 
 /* 3. Hero da Página de Vida Pessoal (vida.html) */
+
 .hero-vida {
-    height: 85vh;
-    background: url('images/cr7-familia.jpg') no-repeat center center/cover;
     position: relative;
+    height: 85vh;
+    background-image: url('https://s2-quem.glbimg.com/OyEKLGbrbE6-Zy6ACwctH11Wzgo=/0x0:1080x832/924x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_b0f0e84207c948ab8b8777be5a6a4395/internal_photos/bs/2023/C/g/lck8bdRx2yNu2RmgyF5Q/cr7.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center 35%;
+    /* 👈 equilíbrio ideal entre rosto e corpo */
+    overflow: hidden;
 }
 
-.hero-vida .overlay {
+
+
+/* Gradiente escuro na base */
+.hero-vida::before {
+    content: "";
     position: absolute;
     inset: 0;
-    background: rgba(0, 0, 0, 0.4);
+    background: linear-gradient(rgba(0, 0, 0, 0) 55%,
+            rgba(0, 0, 0, 0.85) 100%);
+    z-index: 1;
 }
 
+
+/* Remove padding lateral do container Bootstrap */
+.hero-vida .container {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    margin: 0 auto !important;
+}
+
+/* Texto na parte inferior, mais à esquerda */
+.hero-vida .hero-content {
+    position: absolute;
+    bottom: 40px;
+    /* controla a altura do texto */
+    left: 10%;
+    /* desloca para a esquerda */
+    text-align: center;
+    /* alinha o texto à esquerda */
+    color: #fff;
+    z-index: 2;
+    text-shadow: 1px 1px 8px rgba(0, 0, 0, 0.7);
+    animation: fadeInUp 1.3s ease-out forwards;
+}
+
+/* Título com brilho dourado (efeito "shine") */
 .hero-vida h1 {
-    color: white !important;
-    text-shadow: 2px 2px 8px var(--cr7-preto);
+    font-size: 3.5rem;
+    color: var(--cr7-dourado);
+    position: relative;
+    overflow: hidden;
+    display: inline-block;
+    margin-bottom: 0.5rem;
 }
 
-.hero-vida p {
-    color: white !important;
-    font-weight: 500;
-    text-shadow: 1px 1px 5px var(--cr7-preto);
+.hero-vida h1::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -75%;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(120deg,
+            transparent,
+            rgba(255, 255, 255, 0.8),
+            transparent);
+    animation: shine 3s infinite;
 }
+
+/* Parágrafo */
+.hero-vida p {
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: #fff;
+}
+
+/* --- Animações --- */
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes shine {
+    0% {
+        left: -75%;
+    }
+
+    100% {
+        left: 125%;
+    }
+}
+
+/* --- Responsivo --- */
+@media (max-width: 992px) {
+    .hero-vida {
+        height: 75vh;
+    }
+
+    .hero-vida .hero-content {
+        bottom: 30px;
+        left: 8%;
+    }
+
+    .hero-vida h1 {
+        font-size: 3rem;
+    }
+
+    .hero-vida p {
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .hero-vida {
+        height: 65vh;
+    }
+
+    .hero-vida .hero-content {
+        bottom: 25px;
+        left: 6%;
+    }
+
+    .hero-vida h1 {
+        font-size: 2.4rem;
+    }
+
+    .hero-vida p {
+        font-size: 1rem;
+    }
+}
+
 
 /* --- ANIMAÇÕES HERO --- */
 @keyframes fadeInHero {
@@ -469,7 +590,7 @@ footer strong {
 /* --- Responsividade --- */
 @media (max-width: 992px) {
 
-    .hero-portugal,
+    .ftugal,
     .hero-vida {
         height: 80vh;
     }
