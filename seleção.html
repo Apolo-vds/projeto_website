@@ -24,8 +24,8 @@
 
     <!-- Vinheta de abertura -->
     <div id="vinheta">
-        <video id="vinheta-video" autoplay playsinline>
-            <source src="demais arquivos/nations.mp4" type="video/mp4">
+        <video id="vinheta-video" autoplay playsinline disableRemotePlayback>
+            <source src="others/nations.mp4" type="video/mp4">
             Seu navegador não suporta vídeos HTML5.
         </video>
     </div>
@@ -61,7 +61,7 @@
 
             <!-- Player de áudio oculto -->
             <audio id="audio-capitao" preload="auto">
-                <source src="audio/Siuuu! Cristiano Ronaldo.mp3" type="audio/mp3">
+                <source src="others/Siuuu! Cristiano Ronaldo.mp3" type="audio/mp3">
                 Seu navegador não suporta áudio.
             </audio>
         </div>
@@ -333,6 +333,7 @@
             setTimeout(() => vinheta.remove(), 1000); // remove após 1s de fade
         });
     </script>
+
 </body>
 
 </html>
