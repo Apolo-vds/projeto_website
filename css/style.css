@@ -673,11 +673,46 @@ footer strong {
 }
 
 #vinheta video {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  background-color: black;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    background-color: black;
 }
+
+/* === BOTÃO "PULAR VINHETA" === */
+.skip-btn {
+    position: absolute;
+    bottom: 40px;
+    right: 40px;
+    background: rgba(255, 215, 0, 0.15);
+    /* leve toque dourado */
+    color: white;
+    border: 1px solid rgba(255, 215, 0, 0.6);
+    border-radius: 25px;
+    padding: 10px 24px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(6px);
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* Efeito hover */
+.skip-btn:hover {
+    background: rgba(255, 215, 0, 0.3);
+    transform: scale(1.05);
+    box-shadow: 0 0 10px rgba(255, 215, 0, 0.4);
+}
+
+/* Animação de fade-in do botão (aparece após alguns segundos) */
+.show-skip {
+    opacity: 1;
+    pointer-events: auto;
+    transition: opacity 0.6s ease;
+}
+
 
 /* Remover símbolo do Chromecast e controles */
 video::-webkit-media-controls-enclosure,
@@ -693,4 +728,227 @@ video::-webkit-media-controls-overlay-play-button {
     opacity: 0;
     transition: opacity 1s ease;
     pointer-events: none;
+}
+
+.video-thumbnail {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.video-thumbnail img {
+    width: 100%;
+    transition: transform 0.3s ease;
+}
+
+.video-thumbnail:hover img {
+    transform: scale(1.05);
+}
+
+.play-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 3rem;
+    opacity: 0.85;
+    transition: transform 0.2s ease, opacity 0.3s ease;
+}
+
+.video-thumbnail:hover .play-icon {
+    transform: translate(-50%, -50%) scale(1.1);
+    opacity: 1;
+    color: #e63946;
+}
+
+
+/* ===== ESTILO DO BOTÃO "PULAR" ===== */
+.vinheta-container {
+    position: fixed;
+    inset: 0;
+    background: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.vinheta-container video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.skip-btn {
+    position: absolute;
+    bottom: 50px;
+    right: 50px;
+    background: rgba(255, 215, 0, 0.85);
+    color: black;
+    border: none;
+    padding: 10px 25px;
+    border-radius: 30px;
+    font-weight: 600;
+    cursor: pointer;
+    opacity: 0;
+    transition: all 0.4s ease;
+    font-family: 'Oswald', sans-serif;
+}
+
+.skip-btn.show-skip {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.skip-btn:hover {
+    background: #fff1a8;
+    transform: scale(1.05);
+}
+
+.fade-out {
+    opacity: 0;
+    transition: opacity 0.8s ease;
+}
+
+
+/* 🎨 Variáveis de Cor e Imagem */
+:root {
+    --cr7-dourado: #FFD700;
+    --cr7-vermelho: #DC3545;
+    --hero-bg-image: url(images/cr7-2006.webp);
+    /* ⬅️ Mantenha o caminho da sua imagem aqui! */
+}
+
+/* 🖼️ ESTILOS PARA A IMAGEM DE FUNDO NO TOPO */
+.hero {
+    position: relative;
+    height: 100vh;
+    background: var(--hero-bg-image) no-repeat center center/cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    overflow: hidden;
+}
+
+/* Camada escura sobre a imagem (overlay) para o texto aparecer bem */
+.hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.65);
+    /* 65% de opacidade */
+    z-index: 1;
+}
+
+/* Garante que o texto (títulos e botões) fique acima da camada escura */
+.hero .container {
+    position: relative;
+    z-index: 2;
+}
+
+/* 💥 NOVO CSS: Navbar Efeito Scroll */
+.navbar {
+    transition: background-color 0.3s ease;
+    background-color: transparent !important;
+    /* Inicia transparente */
+}
+
+.navbar.scrolled {
+    background-color: rgba(0, 0, 0, 0.95) !important;
+    /* Fundo escuro ao rolar */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+/* 💥 NOVO CSS: Efeito de Hover nas Cartas de Clube */
+.club-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: none;
+    cursor: pointer;
+}
+
+club-card:hover {
+    transform: translateY(-5px) scale(1.03);
+    /* Leve levantamento e aumento */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4) !important;
+}
+
+/* 💥 NOVO CSS: Estilo Inicial para Animação de Scroll */
+/* Garante que o elemento comece 'escondido' (opacidade 0 e um pouco para baixo) */
+.animate-on-scroll {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+/* Quando a classe 'animate__animated' é adicionada (pelo JS), o elemento se revela */
+.animate-on-scroll.animate__animated {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Estilos adicionais para tratamento de erros (ORIGINAIS) */
+.img-error {
+    filter: grayscale(100%);
+    opacity: 0.6;
+    border: 2px dashed var(--cr7-vermelho);
+}
+
+.video-wrapper {
+    position: relative;
+    background: #1a1a1a;
+    border-radius: 8px;
+    overflow: hidden;
+    min-height: 300px;
+}
+
+.video-loading {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    z-index: 1;
+    background: rgba(26, 26, 26, 0.95);
+}
+
+.video-loading.hidden {
+    display: none;
+}
+
+.video-error {
+    background: linear-gradient(135deg, #1a1a1a 0%, #333 100%);
+    padding: 2rem;
+    border-radius: 8px;
+    text-align: center;
+    color: white;
+}
+
+.spinner-custom {
+    border: 3px solid rgba(255, 215, 0, 0.3);
+    border-top: 3px solid var(--cr7-dourado);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
 }
