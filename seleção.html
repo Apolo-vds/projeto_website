@@ -25,13 +25,6 @@
 
 <body>
 
-    <!-- Vinheta de abertura -->
-    <div id="vinheta">
-        <video id="vinheta-video" autoplay playsinline disableRemotePlayback>
-            <source src="others/nations.mp4" type="video/mp4">
-            Seu navegador não suporta vídeos HTML5.
-        </video>
-    </div>
 
 
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="main-nav">
@@ -224,148 +217,162 @@
 
     </main>
 
-    <footer class="text-center p-4">
+    <!-- Rodapé -->
+    <footer class="text-center text-white py-5 bg-dark-custom">
         <div class="container">
-            <p class="mb-1">&copy; 2025 CR7 The Legend — Página dedicada à Seleção Nacional.</p>
-            <div class="footer-info mt-3">
-                <p>Site desenvolvido em <strong>2025</strong> para <strong>Atividade Final de DSA1</strong><br>
-                    <strong>Turma:</strong> INF1FT
-                </p>
-                <p class="mb-0"><strong>Integrantes:</strong><br>
-                    ° Guilherme Luz, 12<br>
-                    ° Rhamon Ramos, 34<br>
-                    ° Wendel Oliveira, 36
-                </p>
-            </div>
-        </div>
-    </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-        crossorigin="anonymous"></script>
+            <div class="row justify-content-center border-top border-secondary pt-4 g-4">
 
-    <script>
-        // Variáveis para a Animação de Números
-        const recordesSection = document.getElementById('recordes');
-        const factNumbers = document.querySelectorAll('.fact-number');
-        let hasCounted = false; // Garante que a contagem só ocorra uma vez
+                <div class="col-md-5 mb-3">
+                    <h5 class="fw-bold mb-3" style="color: var(--cr7-dourado);">
+                        PROJETO ACADÊMICO <i class="bi bi-code-slash ms-1"></i>
+                    </h5>
+                    <p class="small mb-1 text-white-50">Desenvolvido em <strong>2025</strong> para:</p>
+                    <p class="lead fw-bold mb-1">Atividade Final de DSA1</p>
+                    <p class="small mb-0">Turma: INF1FT</p>
+                </div>
 
-        // Função principal de contagem
-        function animateValue(obj, start, end, duration) {
-            let startTime = null;
-            // Define se o número é um ano para garantir que seja um inteiro (e.g., 2016)
-            const isYear = end > 1000 && end <= 2025;
-
-            function step(timestamp) {
-                if (!startTime) startTime = timestamp;
-                const progress = Math.min((timestamp - startTime) / duration, 1);
-
-                let currentValue = progress * (end - start) + start;
-
-                // Atualiza o texto: usa Math.floor para anos e Math.round para números grandes/pequenos
-                obj.textContent = isYear ? Math.floor(currentValue) : Math.round(currentValue);
-
-                if (progress < 1) requestAnimationFrame(step);
-            }
-            requestAnimationFrame(step);
-        }
-
-        // Função que gerencia todas as animações baseadas na rolagem (substitui o showOnScroll)
-        function handleScrollAndAnimate() {
-            // 1. Animação Fade-in para .fade-in
-            const elements = document.querySelectorAll('.fade-in');
-            elements.forEach(el => {
-                const top = el.getBoundingClientRect().top;
-                if (top < window.innerHeight - 100) el.classList.add('show');
-            });
-
-            // 2. Animação de Contador de Números (só roda uma vez)
-            if (hasCounted || !recordesSection) return;
-
-            const rect = recordesSection.getBoundingClientRect();
-
-            // Inicia a contagem quando a seção de recordes entra na tela
-            if (rect.top <= window.innerHeight - 100 && rect.bottom >= 0) {
-                factNumbers.forEach(factNumberDiv => {
-                    const target = parseInt(factNumberDiv.getAttribute('data-target'));
-                    const numberSpan = factNumberDiv.querySelector('.number-to-animate');
-
-                    if (numberSpan) {
-                        animateValue(numberSpan, 0, target, 2000); // 2 segundos de duração
-                    }
-                });
-                hasCounted = true;
-            }
-        }
-
-        // Adiciona o listener de rolagem e checa se a seção já está visível
-        window.addEventListener('scroll', handleScrollAndAnimate);
-        handleScrollAndAnimate(); 
-    </script>
-
-
-    <script>
-        // Som ao clicar no título
-        document.getElementById('titulo-capitao').addEventListener('click', function () {
-            const audio = document.getElementById('audio-capitao');
-            // Se já estiver tocando, pausa; senão, toca
-            if (audio.paused) {
-                audio.play();
-            } else {
-                audio.pause();
-            }
-        });
-    </script>
-
-    <script>
-        const vinheta = document.getElementById('vinheta');
-        const video = document.getElementById('vinheta-video');
-
-        video.addEventListener('ended', () => {
-            vinheta.classList.add('fade-out');
-            setTimeout(() => vinheta.remove(), 1000); // remove após 1s de fade
-        });
-    </script>
-
-
-    <!-- Modal para reprodução de vídeos locais -->
-    <div class="modal fade" id="videoModal" tabindex="-1" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered modal-lg">
-            <div class="modal-content bg-dark border-0 rounded-4">
-                <div class="modal-body p-0">
-                    <video id="modalVideo" controls autoplay style="width: 100%; border-radius: 10px;">
-                        <source src="" type="video/mp4">
-                        Seu navegador não suporta vídeos HTML5.
-                    </video>
+                <div class="col-md-5 mb-3">
+                    <h5 class="fw-bold mb-3" style="color: var(--cr7-dourado);">
+                        INTEGRANTES <i class="bi bi-people-fill ms-1"></i>
+                    </h5>
+                    <ul class="list-unstyled small mb-0">
+                        <li><i class="bi bi-person-circle me-2" style="color: var(--cr7-vermelho);"></i>Guilherme Luz,
+                            12</li>
+                        <li><i class="bi bi-person-circle me-2" style="color: var(--cr7-vermelho);"></i>Rhamon Ramos, 34
+                        </li>
+                        <li><i class="bi bi-person-circle me-2" style="color: var(--cr7-vermelho);"></i>Wendel Oliveira,
+                            36</li>
+                    </ul>
                 </div>
             </div>
-        </div>
-    </div>
+
+            <hr class="text-white-50 my-4">
+
+            <p class="mb-0 small text-white-50">
+                &copy; 2025 <strong>CR7 A Besta Enjaulada</strong> — Conteúdo dedicado à Seleção.
+            </p>
+
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+                integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+                crossorigin="anonymous"></script>
+
+            <script>
+                // Variáveis para a Animação de Números
+                const recordesSection = document.getElementById('recordes');
+                const factNumbers = document.querySelectorAll('.fact-number');
+                let hasCounted = false; // Garante que a contagem só ocorra uma vez
+
+                // Função principal de contagem
+                function animateValue(obj, start, end, duration) {
+                    let startTime = null;
+                    // Define se o número é um ano para garantir que seja um inteiro (e.g., 2016)
+                    const isYear = end > 1000 && end <= 2025;
+
+                    function step(timestamp) {
+                        if (!startTime) startTime = timestamp;
+                        const progress = Math.min((timestamp - startTime) / duration, 1);
+
+                        let currentValue = progress * (end - start) + start;
+
+                        // Atualiza o texto: usa Math.floor para anos e Math.round para números grandes/pequenos
+                        obj.textContent = isYear ? Math.floor(currentValue) : Math.round(currentValue);
+
+                        if (progress < 1) requestAnimationFrame(step);
+                    }
+                    requestAnimationFrame(step);
+                }
+
+                // Função que gerencia todas as animações baseadas na rolagem (substitui o showOnScroll)
+                function handleScrollAndAnimate() {
+                    // 1. Animação Fade-in para .fade-in
+                    const elements = document.querySelectorAll('.fade-in');
+                    elements.forEach(el => {
+                        const top = el.getBoundingClientRect().top;
+                        if (top < window.innerHeight - 100) el.classList.add('show');
+                    });
+
+                    // 2. Animação de Contador de Números (só roda uma vez)
+                    if (hasCounted || !recordesSection) return;
+
+                    const rect = recordesSection.getBoundingClientRect();
+
+                    // Inicia a contagem quando a seção de recordes entra na tela
+                    if (rect.top <= window.innerHeight - 100 && rect.bottom >= 0) {
+                        factNumbers.forEach(factNumberDiv => {
+                            const target = parseInt(factNumberDiv.getAttribute('data-target'));
+                            const numberSpan = factNumberDiv.querySelector('.number-to-animate');
+
+                            if (numberSpan) {
+                                animateValue(numberSpan, 0, target, 2000); // 2 segundos de duração
+                            }
+                        });
+                        hasCounted = true;
+                    }
+                }
+
+                // Adiciona o listener de rolagem e checa se a seção já está visível
+                window.addEventListener('scroll', handleScrollAndAnimate);
+                handleScrollAndAnimate(); 
+            </script>
 
 
-    <script>
-        const videoCards = document.querySelectorAll('.video-card');
-        const modal = new bootstrap.Modal(document.getElementById('videoModal'));
-        const modalVideo = document.getElementById('modalVideo');
-        const videoSource = modalVideo.querySelector('source');
+            <script>
+                // Som ao clicar no título
+                document.getElementById('titulo-capitao').addEventListener('click', function () {
+                    const audio = document.getElementById('audio-capitao');
+                    // Se já estiver tocando, pausa; senão, toca
+                    if (audio.paused) {
+                        audio.play();
+                    } else {
+                        audio.pause();
+                    }
+                });
+            </script>
 
-        // Ao clicar no card, abre o modal e mostra o vídeo com a thumbnail
-        videoCards.forEach(card => {
-            card.addEventListener('click', () => {
-                const videoSrc = card.getAttribute('data-video');
-                const posterSrc = card.getAttribute('data-poster');
-                videoSource.src = videoSrc;
-                modalVideo.poster = posterSrc;
-                modalVideo.load();
-                modal.show();
-            });
-        });
 
-        // Pausa o vídeo ao fechar o modal
-        document.getElementById('videoModal').addEventListener('hidden.bs.modal', () => {
-            modalVideo.pause();
-        });
-    </script>
+
+            <!-- === MODAL DE VÍDEO === -->
+            <div class="modal fade" id="videoModal" tabindex="-1" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content position-relative">
+                        <!-- Botão personalizado -->
+                        <button type="button" class="btn-close-custom" aria-label="Fechar"></button>
+
+                        <video id="modalVideo" controls></video>
+                    </div>
+                </div>
+            </div>
+
+            <script>
+                const videoCards = document.querySelectorAll('.video-card');
+                const modalVideo = document.getElementById('modalVideo');
+                const videoModalElement = document.getElementById('videoModal');
+                const videoModal = new bootstrap.Modal(videoModalElement);
+                const closeBtn = document.querySelector('.btn-close-custom');
+
+                // Abrir vídeo no modal
+                videoCards.forEach(card => {
+                    card.addEventListener('click', () => {
+                        const videoSrc = card.getAttribute('data-video');
+                        modalVideo.src = videoSrc;
+                        modalVideo.poster = card.getAttribute('data-poster');
+                        modalVideo.play();
+                        videoModal.show();
+                    });
+                });
+
+                // Fechar modal com botão "X"
+                closeBtn.addEventListener('click', () => {
+                    videoModal.hide();
+                });
+
+                // Pausa e limpa vídeo ao fechar
+                videoModalElement.addEventListener('hidden.bs.modal', () => {
+                    modalVideo.pause();
+                    modalVideo.src = '';
+                });
+            </script>
 
 
 </body>
