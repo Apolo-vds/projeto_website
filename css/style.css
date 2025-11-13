@@ -46,7 +46,7 @@ h6 {
 #main-nav,
 .navbar {
     background-color: var(--cr7-preto) !important;
-    /* Força bg-dark para todas as navbars */
+    /* Força bg-dark para todas as navbars (Valor: #1a1a1a) */
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
     transition: background-color 0.4s ease, box-shadow 0.4s ease;
 }
@@ -111,15 +111,18 @@ h6 {
 }
 
 .hero-content {
-    position: relative;
-    z-index: 2;
+    position: absolute;
+    bottom: 10px;
+    /* controla o quanto o título desce — aumente/diminua à vontade */
     text-align: center;
+    width: 100%;
+    z-index: 2;
     animation: fadeInHero 1.2s ease forwards;
-    padding-top: 120px;
 }
 
+
 .hero-content h1 {
-    font-size: 4.5rem;
+    font-size: 3.5rem;
     color: var(--cr7-dourado);
     text-shadow: 0 0 15px rgba(255, 215, 0, 0.6);
     opacity: 0;
@@ -166,28 +169,145 @@ h6 {
 }
 
 /* 3. Hero da Página de Vida Pessoal (vida.html) */
+
 .hero-vida {
-    height: 85vh;
-    background: url('images/cr7-familia.jpg') no-repeat center center/cover;
     position: relative;
+    height: 85vh;
+    background-image: url('https://s2-quem.glbimg.com/OyEKLGbrbE6-Zy6ACwctH11Wzgo=/0x0:1080x832/924x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_b0f0e84207c948ab8b8777be5a6a4395/internal_photos/bs/2023/C/g/lck8bdRx2yNu2RmgyF5Q/cr7.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center 35%;
+    /* 👈 equilíbrio ideal entre rosto e corpo */
+    overflow: hidden;
 }
 
-.hero-vida .overlay {
+
+
+/* Gradiente escuro na base */
+.hero-vida::before {
+    content: "";
     position: absolute;
     inset: 0;
-    background: rgba(0, 0, 0, 0.4);
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.8));
+    z-index: 1;
 }
 
+
+/* Remove padding lateral do container Bootstrap */
+.hero-vida .container {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    margin: 0 auto !important;
+}
+
+/* Texto na parte inferior, mais à esquerda */
+.hero-vida .hero-content {
+    position: absolute;
+    bottom: 40px;
+    /* controla a altura do texto */
+    left: 10%;
+    /* desloca para a esquerda */
+    text-align: center;
+    /* alinha o texto à esquerda */
+    color: #fff;
+    z-index: 2;
+    text-shadow: 1px 1px 8px rgba(0, 0, 0, 0.7);
+    animation: fadeInUp 1.3s ease-out forwards;
+}
+
+/* Título com brilho dourado (efeito "shine") */
 .hero-vida h1 {
-    color: white !important;
-    text-shadow: 2px 2px 8px var(--cr7-preto);
+    font-size: 3.5rem;
+    color: var(--cr7-dourado);
+    position: relative;
+    overflow: hidden;
+    display: inline-block;
+    margin-bottom: 0.5rem;
 }
 
-.hero-vida p {
-    color: white !important;
-    font-weight: 500;
-    text-shadow: 1px 1px 5px var(--cr7-preto);
+.hero-vida h1::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -75%;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(120deg,
+            transparent,
+            rgba(255, 255, 255, 0.8),
+            transparent);
+    animation: shine 3s infinite;
 }
+
+/* Parágrafo */
+.hero-vida p {
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: #fff;
+}
+
+/* --- Animações --- */
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes shine {
+    0% {
+        left: -75%;
+    }
+
+    100% {
+        left: 125%;
+    }
+}
+
+/* --- Responsivo --- */
+@media (max-width: 992px) {
+    .hero-vida {
+        height: 75vh;
+    }
+
+    .hero-vida .hero-content {
+        bottom: 30px;
+        left: 8%;
+    }
+
+    .hero-vida h1 {
+        font-size: 3rem;
+    }
+
+    .hero-vida p {
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .hero-vida {
+        height: 65vh;
+    }
+
+    .hero-vida .hero-content {
+        bottom: 25px;
+        left: 6%;
+    }
+
+    .hero-vida h1 {
+        font-size: 2.4rem;
+    }
+
+    .hero-vida p {
+        font-size: 1rem;
+    }
+}
+
 
 /* --- ANIMAÇÕES HERO --- */
 @keyframes fadeInHero {
@@ -406,6 +526,41 @@ h6 {
     font-weight: 600;
 }
 
+/* === FUNDO SUAVE DO MODAL === */
+.modal-backdrop.show {
+    background-color: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(10px);
+}
+
+/* === CONTEÚDO DO MODAL === */
+.modal-content {
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* === VÍDEO DENTRO DO MODAL === */
+.modal-content video {
+    width: 300px;
+    /* ajuste o tamanho como quiser */
+    max-width: 90vw;
+    max-height: 85vh;
+    border-radius: 16px;
+    object-fit: contain;
+    background-color: rgba(0, 0, 0, 0.3);
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease;
+}
+
+.modal-content video:hover {
+    transform: scale(1.02);
+}
+
+
+
 /* --- SEÇÕES DE VIDA PESSOAL (vida.html) --- */
 
 /* Animação na imagem ao rolar */
@@ -469,7 +624,7 @@ footer strong {
 /* --- Responsividade --- */
 @media (max-width: 992px) {
 
-    .hero-portugal,
+    .ftugal,
     .hero-vida {
         height: 80vh;
     }
@@ -534,5 +689,145 @@ footer strong {
 
     .bio-image {
         height: 300px;
+    }
+}
+
+
+/* 🎨 Variáveis de Cor e Imagem */
+:root {
+    --cr7-dourado: #FFD700;
+    --cr7-vermelho: #DC3545;
+    --hero-bg-image: url(images/cr7-2006.webp);
+    /* ⬅️ Mantenha o caminho da sua imagem aqui! */
+}
+
+/* 🖼️ ESTILOS PARA A IMAGEM DE FUNDO NO TOPO */
+.hero {
+    position: relative;
+    height: 95vh;
+    min-height: 80vh;
+    background: var(--hero-bg-image) no-repeat center center/cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    overflow: hidden;
+    padding-top: 20px; /* aumenta o espaço acima da seção */
+    padding-bottom: 50px; /* opcional: espaço abaixo */
+}
+
+/* Camada escura sobre a imagem (overlay) para o texto aparecer bem */
+.hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('https://a4.espncdn.com/combiner/i?img=%2Fphoto%2F2018%2F1001%2Fr440191_1296x729_16%2D9.jpg') center center/cover no-repeat;
+    /* 65% de opacidade */
+    z-index: 1;
+}
+
+/* Garante que o texto (títulos e botões) fique acima da camada escura */
+.hero .container {
+    position: relative;
+    z-index: 2;
+}
+
+/* 💥 NOVO CSS: Navbar Efeito Scroll */
+.navbar {
+    transition: background-color 0.3s ease;
+    background: rgba(0, 0, 0, 0.6)
+        /* Inicia transparente */
+}
+
+
+/* 💥 NOVO CSS: Efeito de Hover nas Cartas de Clube */
+.club-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: none;
+    cursor: pointer;
+}
+
+club-card:hover {
+    transform: translateY(-5px) scale(1.03);
+    /* Leve levantamento e aumento */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4) !important;
+}
+
+/* 💥 NOVO CSS: Estilo Inicial para Animação de Scroll */
+/* Garante que o elemento comece 'escondido' (opacidade 0 e um pouco para baixo) */
+.animate-on-scroll {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+/* Quando a classe 'animate__animated' é adicionada (pelo JS), o elemento se revela */
+.animate-on-scroll.animate__animated {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Estilos adicionais para tratamento de erros (ORIGINAIS) */
+.img-error {
+    filter: grayscale(100%);
+    opacity: 0.6;
+    border: 2px dashed var(--cr7-vermelho);
+}
+
+.video-wrapper {
+    position: relative;
+    background: #1a1a1a;
+    border-radius: 8px;
+    overflow: hidden;
+    min-height: 300px;
+}
+
+.video-loading {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    z-index: 1;
+    background: rgba(26, 26, 26, 0.95);
+}
+
+.video-loading.hidden {
+    display: none;
+}
+
+.video-error {
+    background: linear-gradient(135deg, #1a1a1a 0%, #333 100%);
+    padding: 2rem;
+    border-radius: 8px;
+    text-align: center;
+    color: white;
+}
+
+.spinner-custom {
+    border: 3px solid rgba(255, 215, 0, 0.3);
+    border-top: 3px solid var(--cr7-dourado);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
     }
 }

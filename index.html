@@ -4,21 +4,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Conheça a incrível trajetória de Cristiano Ronaldo pelos clubes - da Madeira ao topo do mundo do futebol.">
     <title>CRISTIANO RONALDO - A BESTA ENJAULADA: Clube e Carreira</title>
+    <link rel="icon" type="image/png" href="images/logo-cr7.webp">
 
-    <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 
-    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@700&family=Roboto:wght@300;400;700&display=swap"
         rel="stylesheet">
 
-    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+        integrity="sha512-Vl8ZbLQXjYwQ9mWm3z8b3E1l8mFJwVd7gik2i8j7wQkqv8d8vEwqkF6b0bQv2gNfWb8a3lC9S9lJwFfJv5d1Vg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
-    <!-- CSS personalizado -->
     <link rel="stylesheet" href="css/style.css">
+
 </head>
 
 <body>
@@ -27,7 +31,7 @@
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="main-nav">
         <div class="container">
             <a class="navbar-brand fs-2 fw-bold" href="#inicio" style="color: var(--cr7-dourado);">
-                CR7 <small class="text-white">Legend</small>
+                CR7 <small class="text-white">O Robozão</small>
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -48,15 +52,19 @@
     </nav>
 
     <!-- Hero -->
-    <section id="inicio" class="hero">
-        <div class="container text-center">
-            <h2 class="animate__animated animate__fadeInDown">CRISTIANO RONALDO</h2>
-            <h1 class="animate__animated animate__fadeInUp">O MAIOR DE TODOS</h1>
-            <a href="#titulos" class="btn btn-lg fw-bold mt-5 px-5 py-3 btn-cta-hero animate__animated animate__zoomIn">
-                VER PALMARÉS INIGUALÁVEL <i class="bi bi-trophy-fill ms-2"></i>
-            </a>
+    <section id="inicio" class="hero"
+        style="min-height: 100vh; display: flex; flex-direction: column; justify-content: flex-end;">
+        <div class="container text-center" style="margin-bottom: 50px;">
+            <h2 class="animate__animated animate__fadeInDown mb-3">CRISTIANO RONALDO</h2>
+            <h1 class="animate__animated animate__fadeInUp mb-4">O MAIOR DE TODOS</h1>
         </div>
     </section>
+
+
+
+
+
+
 
     <!-- Biografia -->
     <section id="bio" class="section-padding">
@@ -66,25 +74,26 @@
                 <div class="col-lg-7">
                     <p class="lead text-dark">
                         Nascido em <strong class="fw-bold">Funchal, Ilha da Madeira, em 5 de fevereiro de 1985</strong>,
-                        Cristiano
-                        Ronaldo dos Santos Aveiro iniciou sua carreira no Sporting, onde seu talento explodiu. Aos 18
-                        anos,
-                        transferiu-se para o <strong class="fw-bold">Manchester United</strong>, sob a tutela de Sir
-                        Alex Ferguson,
-                        onde se transformou em uma estrela mundial.
+                        Cristiano Ronaldo dos Santos Aveiro iniciou sua carreira no Sporting, onde seu talento explodiu.
+                        Aos 18
+                        anos, transferiu-se para o <strong class="fw-bold">Manchester United</strong>, sob a tutela de
+                        Sir
+                        Alex Ferguson, onde se transformou em uma estrela mundial.
                     </p>
                     <p class="text-secondary">
                         Sua habilidade, velocidade e <strong class="fw-bold">dedicação incansável</strong> definiram uma
-                        era no
-                        futebol. Sua filosofia de vida e treino, simbolizada pelo seu grito "Siiii!", representam a
-                        mentalidade de um
-                        campeão que busca constantemente a perfeição e a quebra de recordes. Eleito cinco vezes o melhor
-                        do mundo,
-                        seu legado é eterno.
+                        era no futebol. Sua filosofia de vida e treino, simbolizada pelo seu grito "Siuu!", representam
+                        a
+                        mentalidade de um campeão que busca constantemente a perfeição e a quebra de recordes. Eleito
+                        cinco vezes o melhor
+                        do mundo, seu legado é eterno.
                     </p>
                 </div>
                 <div class="col-lg-5">
-                    <div class="bio-image w-100 shadow-lg"></div>
+                    <div class="bio-image w-100 shadow-lg" role="img"
+                        aria-label="Cristiano Ronaldo em momento reflexivo">
+                        <img src="images/cr7_juventus.jfif" alt="" height="400px" width="600px">
+                    </div>
                 </div>
             </div>
         </div>
@@ -99,9 +108,13 @@
                 <div class="col-6 col-md-4 col-lg-2">
                     <div class="card club-card h-100">
                         <div class="card-body py-4">
-                            <img src="images/Sporting cp club.webp" alt="Escudo Sporting CP" class="img-fluid">
+                            <img src="images/Sporting cp club.webp" alt="Escudo do Sporting Clube de Portugal"
+                                class="img-fluid" loading="lazy"
+                                onerror="this.onerror=null; this.style.opacity='0.5'; this.alt='Imagem não disponível';">
                             <h5 class="card-title fw-bold mt-3">SPORTING CP</h5>
                             <p class="card-text small">1997 - 2003</p>
+                            <span class="badge bg-danger rounded-pill mt-2">5 Gols</span>
+
                         </div>
                     </div>
                 </div>
@@ -110,9 +123,12 @@
                     <div class="card club-card h-100">
                         <div class="card-body py-4">
                             <img src="images/manchester-united-logo-on-transparent-background-free-vector.jpg"
-                                alt="Escudo Manchester United" class="img-fluid">
+                                alt="Escudo do Manchester United" class="img-fluid" loading="lazy"
+                                onerror="this.onerror=null; this.style.opacity='0.5'; this.alt='Imagem não disponível';">
                             <h5 class="card-title fw-bold mt-3">MAN. UNITED</h5>
                             <p class="card-text small">2003 - 2009 / 2021 - 2022</p>
+                            <span class="badge bg-danger rounded-pill mt-2">145 Gols</span>
+
                         </div>
                     </div>
                 </div>
@@ -120,10 +136,12 @@
                 <div class="col-6 col-md-4 col-lg-2">
                     <div class="card club-card club-main h-100">
                         <div class="card-body py-4">
-                            <img src="images/real madrid lgoo.png" alt="Escudo Real Madrid" class="img-fluid">
+                            <img src="images/reall madrd.jpg" alt="Escudo do Real Madrid Club de Fútbol"
+                                class="img-fluid" loading="lazy"
+                                onerror="this.onerror=null; this.style.opacity='0.5'; this.alt='Imagem não disponível';">
                             <h5 class="card-title fw-bold mt-3">REAL MADRID</h5>
                             <p class="card-text small"><strong>2009 - 2018</strong></p>
-                            <span class="badge bg-danger rounded-pill mt-2">451 Gols</span>
+                            <span class="badge bg-danger rounded-pill mt-2">450 Gols</span>
                         </div>
                     </div>
                 </div>
@@ -131,9 +149,12 @@
                 <div class="col-6 col-md-4 col-lg-2">
                     <div class="card club-card h-100">
                         <div class="card-body py-4">
-                            <img src="images/R.png" alt="Escudo Juventus" class="img-fluid">
+                            <img src="images/R.png" alt="Escudo da Juventus Football Club" class="img-fluid"
+                                loading="lazy"
+                                onerror="this.onerror=null; this.style.opacity='0.5'; this.alt='Imagem não disponível';">
                             <h5 class="card-title fw-bold mt-3">JUVENTUS</h5>
                             <p class="card-text small">2018 - 2021</p>
+                            <span class="badge bg-danger rounded-pill mt-2">101 Gols</span>
                         </div>
                     </div>
                 </div>
@@ -141,9 +162,12 @@
                 <div class="col-6 col-md-4 col-lg-2">
                     <div class="card club-card h-100">
                         <div class="card-body py-4">
-                            <img src="images/all nssr 2.webp" alt="Escudo Al-Nassr" class="img-fluid">
+                            <img src="images/all nssr 2.webp" alt="Escudo do Al-Nassr Football Club" class="img-fluid"
+                                loading="lazy"
+                                onerror="this.onerror=null; this.style.opacity='0.5'; this.alt='Imagem não disponível';">
                             <h5 class="card-title fw-bold mt-3">AL-NASSR</h5>
                             <p class="card-text small">2023 - Atual</p>
+                            <span class="badge bg-danger rounded-pill mt-2">108+ Gols</span>
                         </div>
                     </div>
                 </div>
@@ -155,12 +179,11 @@
     <!-- Títulos -->
     <section id="titulos" class="section-padding">
         <div class="container text-center">
-            <h2 class="section-title text-dark">Palmarés Inigualável</h2>
             <div class="row g-4">
                 <div class="col-lg-3 col-md-6">
                     <div class="card shadow trophy-item p-3 h-100">
                         <div class="card-body">
-                            <i class="bi bi-trophy-fill" style="color: var(--cr7-dourado);"></i>
+                            <i class="bi bi-trophy-fill" style="color: var(--cr7-dourado);" aria-hidden="true"></i>
                             <h3 class="card-title fs-4 fw-bold">5x UEFA Champions League</h3>
                             <p class="card-text text-muted small">Maior vencedor da história do torneio.</p>
                         </div>
@@ -170,7 +193,7 @@
                 <div class="col-lg-3 col-md-6">
                     <div class="card shadow trophy-item p-3 h-100">
                         <div class="card-body">
-                            <i class="bi bi-star-fill" style="color: var(--cr7-dourado);"></i>
+                            <i class="bi bi-star-fill" style="color: var(--cr7-dourado);" aria-hidden="true"></i>
                             <h3 class="card-title fs-4 fw-bold">5x Bola de Ouro</h3>
                             <p class="card-text text-muted small">Eleito o Melhor Jogador do Mundo (Múltiplas vezes).
                             </p>
@@ -181,7 +204,7 @@
                 <div class="col-lg-3 col-md-6">
                     <div class="card shadow trophy-item p-3 h-100">
                         <div class="card-body">
-                            <i class="bi bi-flag-fill" style="color: var(--cr7-vermelho);"></i>
+                            <i class="bi bi-flag-fill" style="color: var(--cr7-vermelho);" aria-hidden="true"></i>
                             <h3 class="card-title fs-4 fw-bold">Eurocopa 2016</h3>
                             <p class="card-text text-muted small">O primeiro grande título com a Seleção Portuguesa.</p>
                         </div>
@@ -191,7 +214,7 @@
                 <div class="col-lg-3 col-md-6">
                     <div class="card shadow trophy-item p-3 h-100">
                         <div class="card-body">
-                            <i class="bi bi-bullseye" style="color: var(--cr7-vermelho);"></i>
+                            <i class="bi bi-bullseye" style="color: var(--cr7-vermelho);" aria-hidden="true"></i>
                             <h3 class="card-title fs-4 fw-bold">Maior Artilheiro da História</h3>
                             <p class="card-text text-muted small">Mais de 800 gols na carreira profissional.</p>
                         </div>
@@ -236,12 +259,26 @@
                 <div class="col-lg-4 col-md-6">
                     <div class="card h-100 shadow border-0">
                         <div class="card-header fw-bold text-center bg-light">Bicicleta vs. Juventus (2018)</div>
-                        <div class="ratio ratio-16x9">
-                            <iframe width="560" height="315"
-                                src="https://www.youtube.com/embed/JD-BWxW87wU?si=SeQT5sJ9CGXo5yPb"
-                                title="YouTube video player" frameborder="0"
-                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                allowfullscreen></iframe>
+                        <div class="video-wrapper" data-video-id="JD-BWxW87wU">
+                            <div class="video-loading">
+                                <div class="spinner-custom"></div>
+                                <p class="mt-3 small">Carregando vídeo...</p>
+                            </div>
+                            <div class="ratio ratio-16x9">
+                                <iframe data-src="https://www.youtube.com/embed/JD-BWxW87wU?si=SeQT5sJ9CGXo5yPb"
+                                    title="Gol de bicicleta de Cristiano Ronaldo contra a Juventus em 2018"
+                                    frameborder="0"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                    allowfullscreen loading="lazy"></iframe>
+                            </div>
+                            <noscript>
+                                <div class="p-3 text-center">
+                                    <a class="btn btn-sm btn-danger" href="https://youtube.com/watch?v=JD-BWxW87wU"
+                                        target="_blank" rel="noopener noreferrer">
+                                        <i class="bi bi-youtube me-2"></i>Ver no YouTube
+                                    </a>
+                                </div>
+                            </noscript>
                         </div>
                     </div>
                 </div>
@@ -249,9 +286,26 @@
                 <div class="col-lg-4 col-md-6">
                     <div class="card h-100 shadow border-0">
                         <div class="card-header fw-bold text-center bg-light">Falta vs. Portsmouth (2008)</div>
-                        <div class="ratio ratio-16x9">
-                            <iframe src="https://www.youtube.com/embed/TrPCZvEixlA?start=19&controls=0"
-                                title="Falta vs. Portsmouth" allowfullscreen></iframe>
+                        <div class="video-wrapper" data-video-id="TrPCZvEixlA">
+                            <div class="video-loading">
+                                <div class="spinner-custom"></div>
+                                <p class="mt-3 small">Carregando vídeo...</p>
+                            </div>
+                            <div class="ratio ratio-16x9">
+                                <iframe data-src="https://www.youtube.com/embed/TrPCZvEixlA?start=19"
+                                    title="Falta memorável de Cristiano Ronaldo contra Portsmouth em 2008"
+                                    frameborder="0"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                    allowfullscreen loading="lazy"></iframe>
+                            </div>
+                            <noscript>
+                                <div class="p-3 text-center">
+                                    <a class="btn btn-sm btn-danger" href="https://youtube.com/watch?v=TrPCZvEixlA"
+                                        target="_blank" rel="noopener noreferrer">
+                                        <i class="bi bi-youtube me-2"></i>Ver no YouTube
+                                    </a>
+                                </div>
+                            </noscript>
                         </div>
                     </div>
                 </div>
@@ -259,9 +313,25 @@
                 <div class="col-lg-4 col-md-12">
                     <div class="card h-100 shadow border-0">
                         <div class="card-header fw-bold text-center bg-light">Salto e Cabeceio (2,93m)</div>
-                        <div class="ratio ratio-16x9">
-                            <iframe src="https://www.youtube.com/embed/2NscDelVwmo?start=210&controls=0"
-                                title="Salto e Cabeceio" allowfullscreen></iframe>
+                        <div class="video-wrapper" data-video-id="2NscDelVwmo">
+                            <div class="video-loading">
+                                <div class="spinner-custom"></div>
+                                <p class="mt-3 small">Carregando vídeo...</p>
+                            </div>
+                            <div class="ratio ratio-16x9">
+                                <iframe data-src="https://www.youtube.com/embed/2NscDelVwmo?start=210"
+                                    title="Salto impressionante de 2,93m de Cristiano Ronaldo" frameborder="0"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                    allowfullscreen loading="lazy"></iframe>
+                            </div>
+                            <noscript>
+                                <div class="p-3 text-center">
+                                    <a class="btn btn-sm btn-danger" href="https://youtube.com/watch?v=2NscDelVwmo"
+                                        target="_blank" rel="noopener noreferrer">
+                                        <i class="bi bi-youtube me-2"></i>Ver no YouTube
+                                    </a>
+                                </div>
+                            </noscript>
                         </div>
                     </div>
                 </div>
@@ -270,19 +340,41 @@
     </section>
 
     <!-- Rodapé -->
-    <footer class="text-center text-white p-4">
+    <footer class="text-center text-white py-5 bg-dark-custom">
         <div class="container">
-            <p class="mb-1">&copy; 2025 CR7 The Legend — Dedicado à Seleção Nacional.</p>
-            <div class="footer-info mt-3">
-                <p>Site desenvolvido em <strong>2025</strong> para <strong>Atividade Final de DSA1</strong><br>
-                    <strong>Turma:</strong> INF1FT
-                </p>
-                <p class="mb-0"><strong>Integrantes:</strong><br>
-                    ° Guilherme Luz, 12<br>
-                    ° Rhamon Ramos, 34<br>
-                    ° Wendel Oliveira, 36
-                </p>
+
+            <div class="row justify-content-center border-top border-secondary pt-4 g-4">
+
+                <div class="col-md-5 mb-3">
+                    <h5 class="fw-bold mb-3" style="color: var(--cr7-dourado);">
+                        PROJETO ACADÊMICO <i class="bi bi-code-slash ms-1"></i>
+                    </h5>
+                    <p class="small mb-1 text-white-50">Desenvolvido em <strong>2025</strong> para:</p>
+                    <p class="lead fw-bold mb-1">Atividade Final de DSA1</p>
+                    <p class="small mb-0">Turma: INF1FT</p>
+                </div>
+
+                <div class="col-md-5 mb-3">
+                    <h5 class="fw-bold mb-3" style="color: var(--cr7-dourado);">
+                        INTEGRANTES <i class="bi bi-people-fill ms-1"></i>
+                    </h5>
+                    <ul class="list-unstyled small mb-0">
+                        <li><i class="bi bi-person-circle me-2" style="color: var(--cr7-vermelho);"></i>Guilherme Luz,
+                            12</li>
+                        <li><i class="bi bi-person-circle me-2" style="color: var(--cr7-vermelho);"></i>Rhamon Ramos, 34
+                        </li>
+                        <li><i class="bi bi-person-circle me-2" style="color: var(--cr7-vermelho);"></i>Wendel Oliveira,
+                            36</li>
+                    </ul>
+                </div>
             </div>
+
+            <hr class="text-white-50 my-4">
+
+            <p class="mb-0 small text-white-50">
+                &copy; 2025 <strong>CR7 A Besta Enjaulada</strong> — Conteúdo dedicado à Carreira por Clubes.
+            </p>
+
         </div>
     </footer>
 
@@ -292,46 +384,176 @@
         crossorigin="anonymous"></script>
 
     <script>
-        // Efeito da navbar ao rolar
+        // ========== TRATAMENTO DE ERROS E MELHORIAS ==========
+
+        // Inicializar tudo quando página carregar
         document.addEventListener('DOMContentLoaded', function () {
-            const navbar = document.getElementById('main-nav');
-            window.addEventListener('scroll', () => {
-                if (window.scrollY > 50) navbar.classList.add('scrolled');
-                else navbar.classList.remove('scrolled');
-            });
+            initNavbar();
+            initStatsAnimation();
+            initLazyVideos();
         });
 
-        // Animação dos números
-        const statsSection = document.getElementById('stats');
-        const statNumbers = document.querySelectorAll('.stat-number');
-        let hasCounted = false;
+        // ===== NAVBAR COM SCROLL =====
+        function initNavbar() {
+            try {
+                const navbar = document.getElementById('main-nav');
+                if (!navbar) {
+                    console.warn('Navbar não encontrada');
+                    return;
+                }
 
-        function animateValue(obj, start, end, duration) {
-            let startTime = null;
-            function step(timestamp) {
-                if (!startTime) startTime = timestamp;
-                const progress = Math.min((timestamp - startTime) / duration, 1);
-                obj.textContent = Math.floor(progress * (end - start) + start);
-                if (progress < 1) requestAnimationFrame(step);
-            }
-            requestAnimationFrame(step);
-        }
-
-        function handleScroll() {
-            if (hasCounted) return;
-            const rect = statsSection.getBoundingClientRect();
-            if (rect.top <= window.innerHeight - 100 && rect.bottom >= 0) {
-                statNumbers.forEach(stat => {
-                    const target = parseInt(stat.getAttribute('data-target'));
-                    animateValue(stat, 0, target, 2000);
+                window.addEventListener('scroll', () => {
+                    if (window.scrollY > 50) {
+                        navbar.classList.add('scrolled');
+                    } else {
+                        navbar.classList.remove('scrolled');
+                    }
                 });
-                hasCounted = true;
-                window.removeEventListener('scroll', handleScroll);
+            } catch (error) {
+                console.error('Erro ao inicializar navbar:', error);
             }
         }
 
-        window.addEventListener('scroll', handleScroll);
-        handleScroll();
+        // ===== ANIMAÇÃO DOS NÚMEROS =====
+        function initStatsAnimation() {
+            try {
+                const statsSection = document.getElementById('stats');
+                const statNumbers = document.querySelectorAll('.stat-number');
+
+                if (!statsSection || statNumbers.length === 0) {
+                    console.warn('Seção de estatísticas não encontrada');
+                    return;
+                }
+
+                let hasCounted = false;
+
+                function animateValue(obj, start, end, duration) {
+                    let startTime = null;
+
+                    function step(timestamp) {
+                        if (!startTime) startTime = timestamp;
+                        const progress = Math.min((timestamp - startTime) / duration, 1);
+                        obj.textContent = Math.floor(progress * (end - start) + start);
+                        if (progress < 1) {
+                            requestAnimationFrame(step);
+                        }
+                    }
+                    requestAnimationFrame(step);
+                }
+
+                function handleScroll() {
+                    if (hasCounted) return;
+
+                    try {
+                        const rect = statsSection.getBoundingClientRect();
+                        if (rect.top <= window.innerHeight - 100 && rect.bottom >= 0) {
+                            statNumbers.forEach(stat => {
+                                const target = parseInt(stat.getAttribute('data-target'));
+                                if (!isNaN(target)) {
+                                    animateValue(stat, 0, target, 2000);
+                                }
+                            });
+                            hasCounted = true;
+                            window.removeEventListener('scroll', handleScroll);
+                        }
+                    } catch (error) {
+                        console.error('Erro na animação de estatísticas:', error);
+                    }
+                }
+
+                window.addEventListener('scroll', handleScroll);
+                handleScroll(); // Verifica imediatamente se já está visível
+            } catch (error) {
+                console.error('Erro ao inicializar estatísticas:', error);
+            }
+        }
+
+        // ===== LAZY LOAD DE VÍDEOS =====
+        function initLazyVideos() {
+            try {
+                const videoWrappers = document.querySelectorAll('.video-wrapper');
+
+                if (videoWrappers.length === 0) {
+                    console.warn('Nenhum vídeo encontrado');
+                    return;
+                }
+
+                // Verificar se IntersectionObserver está disponível
+                if (!('IntersectionObserver' in window)) {
+                    console.warn('IntersectionObserver não suportado, carregando todos os vídeos');
+                    videoWrappers.forEach(loadVideo);
+                    return;
+                }
+
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            loadVideo(entry.target);
+                            observer.unobserve(entry.target);
+                        }
+                    });
+                }, {
+                    rootMargin: '100px'
+                });
+
+                videoWrappers.forEach(wrapper => observer.observe(wrapper));
+            } catch (error) {
+                console.error('Erro ao inicializar lazy load de vídeos:', error);
+            }
+        }
+
+        function loadVideo(wrapper) {
+            try {
+                const iframe = wrapper.querySelector('iframe');
+                const loading = wrapper.querySelector('.video-loading');
+                const videoId = wrapper.getAttribute('data-video-id');
+
+                if (!iframe || !videoId) {
+                    showVideoError(wrapper, videoId);
+                    return;
+                }
+
+                const src = iframe.getAttribute('data-src');
+                if (src) {
+                    iframe.src = src;
+
+                    // Listener para quando vídeo carregar
+                    iframe.onload = () => {
+                        if (loading) loading.classList.add('hidden');
+                    };
+
+                    // Listener para erro
+                    iframe.onerror = () => {
+                        showVideoError(wrapper, videoId);
+                    };
+
+                    // Timeout de segurança (10 segundos)
+                    setTimeout(() => {
+                        if (loading && !loading.classList.contains('hidden')) {
+                            loading.classList.add('hidden');
+                        }
+                    }, 10000);
+                }
+            } catch (error) {
+                console.error('Erro ao carregar vídeo:', error);
+                showVideoError(wrapper, wrapper.getAttribute('data-video-id'));
+            }
+        }
+
+        function showVideoError(wrapper, videoId) {
+            wrapper.innerHTML = `
+                <div class="video-error">
+                    <i class="bi bi-exclamation-triangle-fill fs-1 mb-3" style="color: var(--cr7-dourado);"></i>
+                    <p class="mb-3">Vídeo temporariamente indisponível</p>
+                    <a href="https://youtube.com/watch?v=${videoId}" 
+                       target="_blank" 
+                       rel="noopener noreferrer"
+                       class="btn btn-sm btn-danger">
+                        <i class="bi bi-youtube me-2"></i>Ver no YouTube
+                    </a>
+                </div>
+            `;
+        }
     </script>
 
 </body>
