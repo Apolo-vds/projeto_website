@@ -44,7 +44,19 @@
     <header id="inicio" class="hero-portugal text-center d-flex align-items-start justify-content-center">
         <div class="hero-overlay"></div>
         <div class="container text-white hero-content">
-            <h1 class="display-1 fw-bold shine fade-slide">O ETERNO CAPITÃO</h1>
+            <h1 class="display-1 fw-bold shine fade-slide" id="titulo-capitao" style="cursor: pointer;">
+                O ETERNO CAPITÃO
+            </h1>
+
+            <!-- Player do YouTube oculto -->
+            <iframe id="player" width="0" height="0" src="" allow="autoplay"></iframe>
+
+            <script>
+                const player = document.getElementById("player");
+                document.getElementById("titulo-capitao").addEventListener("click", function () {
+                    player.src = "unhc4nAZHElIA8Yr";
+                });
+            </script>
         </div>
     </header>
 
@@ -122,55 +134,68 @@
 
                 <div class="row g-4">
                     <div class="col-lg-3 col-md-6">
-                        <div class="card h-100 moment-card shadow border-0">
-                            <img src="images/cr7-2006.webp" class="card-img-top"
-                                alt="Cristiano Ronaldo na Copa do Mundo 2006">
-                            <div class="card-body">
-                                <h5 class="card-title card-title-portugal">Debut na Copa (2006)</h5>
-                                <p class="card-text small text-muted">A primeira de muitas aparições no palco mundial.
-                                </p>
+                        <a href="https://youtube.com/shorts/tYdKCpKkWiQ?si=-Nd51ZykhnT_rryP" target="_blank"
+                            class="text-decoration-none text-dark">
+                            <div class="card h-100 moment-card shadow border-0">
+                                <img src="images/cr7-2006.webp" class="card-img-top"
+                                    alt="Cristiano Ronaldo na Copa do Mundo 2006">
+                                <div class="card-body">
+                                    <h5 class="card-title card-title-portugal">Debut na Copa (2006)</h5>
+                                    <p class="card-text small text-muted">A primeira de muitas aparições no palco
+                                        mundial.</p>
+                                </div>
                             </div>
-                        </div>
+                        </a>
                     </div>
 
                     <div class="col-lg-3 col-md-6">
-                        <div class="card h-100 moment-card shadow border-0">
-                            <img src="images/cristiano_euro_0.jpg" class="card-img-top"
-                                alt="Cristiano Ronaldo comemorando na Euro 2016">
-                            <div class="card-body">
-                                <h5 class="card-title card-title-portugal">A Consagração (2016)</h5>
-                                <p class="card-text small text-muted">Mesmo lesionado na final, liderou como nunca e
-                                    ergueu o troféu.</p>
+                        <a href="https://youtube.com/shorts/dgcTymnGcb8?si=ZNoHRwsZoVTageqG" target="_blank"
+                            class="text-decoration-none text-dark">
+                            <div class="card h-100 moment-card shadow border-0">
+                                <img src="images/cristiano_euro_0.jpg" class="card-img-top"
+                                    alt="Cristiano Ronaldo comemorando na Euro 2016">
+                                <div class="card-body">
+                                    <h5 class="card-title card-title-portugal">A Consagração (2016)</h5>
+                                    <p class="card-text small text-muted">Mesmo lesionado na final, liderou como nunca e
+                                        ergueu o troféu.</p>
+                                </div>
                             </div>
-                        </div>
+                        </a>
                     </div>
 
                     <div class="col-lg-3 col-md-6">
-                        <div class="card h-100 moment-card shadow border-0">
-                            <img src="images/nations-2019.jpg" class="card-img-top"
-                                alt="Cristiano Ronaldo comemorando título da Liga das Nações 2019">
-                            <div class="card-body">
-                                <h5 class="card-title card-title-portugal">Liga das Nações (2019)</h5>
-                                <p class="card-text small text-muted">Mais um título conquistado em casa, para a
-                                    história.</p>
+                        <a href="https://youtube.com/shorts/ZhmUzZowRpc?si=wW4JGhLYA_c2Se8F" target="_blank"
+                            class="text-decoration-none text-dark">
+                            <div class="card h-100 moment-card shadow border-0">
+                                <img src="images/nations-2019.jpg" class="card-img-top"
+                                    alt="Cristiano Ronaldo comemorando título da Liga das Nações 2019">
+                                <div class="card-body">
+                                    <h5 class="card-title card-title-portugal">Liga das Nações (2019)</h5>
+                                    <p class="card-text small text-muted">Mais um título conquistado em casa, para a
+                                        história.</p>
+                                </div>
                             </div>
-                        </div>
+                        </a>
                     </div>
 
                     <div class="col-lg-3 col-md-6">
-                        <div class="card h-100 moment-card shadow border-0">
-                            <img src="images/cr7gol.jpg" class="card-img-top"
-                                alt="Cristiano Ronaldo comemorando 200 jogos por Portugal">
-                            <div class="card-body">
-                                <h5 class="card-title card-title-portugal">Recorde de 200 Jogos</h5>
-                                <p class="card-text small text-muted">Primeiro jogador da história a atingir 200
-                                    partidas por uma seleção.</p>
+                        <a href="https://youtube.com/shorts/8Fs9gZ7M1-Q?si=HbIVQEqBNTa5-3Kw" target="_blank"
+                            class="text-decoration-none text-dark">
+                            <div class="card h-100 moment-card shadow border-0">
+                                <img src="images/cr7gol.jpg" class="card-img-top"
+                                    alt="Cristiano Ronaldo comemorando 200 jogos por Portugal">
+                                <div class="card-body">
+                                    <h5 class="card-title card-title-portugal">Recorde de 200 Jogos</h5>
+                                    <p class="card-text small text-muted">Primeiro jogador da história a atingir 200
+                                        partidas por uma seleção.</p>
+                                </div>
                             </div>
-                        </div>
+                        </a>
                     </div>
                 </div>
             </div>
         </section>
+
 
     </main>
 
